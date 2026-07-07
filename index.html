@@ -2,13 +2,308 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Ayşe'nin Ödev Portfolyosu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayşe Ulaşlı - SIC Portfolyo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f8fafc;
+            font-family: 'Open Sans', sans-serif;
+            color: #334155;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* Split Screen Layout */
+        .container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .left-panel {
+            flex: 1;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #ffffff;
+            z-index: 10;
+            box-shadow: 20px 0 40px rgba(0,0,0,0.02);
+        }
+
+        .right-panel {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .right-panel {
+                display: block;
+            }
+        }
+
+        .right-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(20, 40, 160, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+        }
+
+        /* Branding */
+        .brand-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .brand-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            color: #1428A0; /* Samsung Blue */
+            letter-spacing: -0.5px;
+        }
+
+        .divider {
+            width: 2px;
+            height: 24px;
+            background-color: #cbd5e1;
+        }
+
+        .program-name {
+            font-weight: 600;
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 56px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: #64748b;
+            margin-bottom: 50px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .subtitle strong {
+            color: #1428A0;
+        }
+
+        /* Assignment Cards */
+        .assignments-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 650px;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            padding: 24px 30px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 6px;
+            background-color: #cbd5e1;
+            transition: background-color 0.3s ease;
+        }
+
+        .card.active::before {
+            background-color: #1428A0;
+        }
+
+        .card.upcoming::before {
+            background-color: #f59e0b;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            border-color: #cbd5e1;
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 24px;
+        }
+
+        .card.active .icon-box {
+            background-color: #eff6ff;
+            color: #1428A0;
+        }
+
+        .card.upcoming .icon-box {
+            background-color: #fef3c7;
+            color: #d97706;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .card-content p {
+            font-size: 15px;
+            color: #64748b;
+        }
+
+        .arrow {
+            color: #94a3b8;
+            font-size: 20px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .card:hover .arrow {
+            transform: translateX(5px);
+        }
+        
+        .card.active:hover .arrow {
+            color: #1428A0;
+        }
+
+        /* Badge */
+        .badge {
+            background-color: #f1f5f9;
+            color: #64748b;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-left: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .card.upcoming .badge {
+            background-color: #fef3c7;
+            color: #d97706;
+        }
+
+        @media (max-width: 768px) {
+            .left-panel {
+                padding: 40px 20px;
+            }
+            h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Samsung Innovation Campus Ödevlerim</h1>
-    <ul>
-        <li><a href="Ch1-LAB2/Personal-Web-Site.html">Chapter 1 - Lab 2: Kişisel Web Sitesi</a></li>
+
+    <div class="container">
         
-    </ul>
+        <!-- Sol Panel: İçerik -->
+        <div class="left-panel">
+            
+            <div class="brand-header">
+                <h2>SAMSUNG</h2>
+                <div class="divider"></div>
+                <span class="program-name">Innovation Campus</span>
+            </div>
+
+            <h1>AI & Data Science <br>Portfolyosu</h1>
+            <p class="subtitle">Bu sayfa, <strong>Ayşe Ulaşlı</strong> tarafından geliştirilen proje ve laboratuvar çalışmalarını içermektedir.</p>
+
+            <div class="assignments-grid">
+                
+                <!-- Aktif Ödev -->
+                <a href="Ch1-LAB2/Personal-Web-Site.html" class="card active">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chapter 1 - Lab 2</h3>
+                        <p>Kişisel Web Sitesi Tasarımı</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right arrow"></i>
+                </a>
+
+                <!-- Yeni Gelecek Ödev (Senin üzerinde çalıştığın A/B Testi) -->
+                <a href="#" class="card upcoming">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: flex; align-items: center;">
+                            <h3>Chapter 4 - Lab 4</h3>
+                            <span class="badge">YAKINDA</span>
+                        </div>
+                        <p>Prompt Engineering A/B Karşılaştırması</p>
+                    </div>
+                    <i class="fa-solid fa-lock arrow" style="font-size: 16px;"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Sağ Panel: Görsel -->
+        <div class="right-panel">
+            <div class="overlay"></div>
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/10598397712512907091_0" alt="Data Science Background">
+        </div>
+
+    </div>
+
 </body>
 </html>
