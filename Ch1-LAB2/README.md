@@ -1,4 +1,4 @@
-# [Lab 2] Personal Branding Website with Vibe Coding
+# [Lab 2] Personal Branding Website with Vibe Coding 🚀
 
 **Samsung Innovation Campus - Chapter 1: Introduction to Generative AI**
 
@@ -6,8 +6,13 @@ Bu proje, üretken yapay zeka araçları (Claude & Gemini) kullanılarak "Vibe C
 
 ---
 
-## Step 1 & 3: Profile Definition and Website Generation
-Yapay zekanın beni tanıyıp içerikleri oluşturması ve ardından HTML/CSS kodunu tek seferde yazması için aşağıdaki "Mega Prompt" kullanılmıştır.
+## Step 1: Define Your Personal Profile
+
+**Discussion Point cevabım:** Bu adımda amaç CV'yi AI'ya "analiz ettirmek" değil, kendimi kendi cümlelerimle anlatmaktı. Bu yüzden mega prompt'a CV'yi eklemeden önce kısaca kendimi tanıttım:
+
+> Ben Ayşe, Gaziantep'te yaşayan, İstanbul Kültür Üniversitesi'nden yeni mezun olmuş bir Endüstri & Bilgisayar Mühendisiyim (çift anadal). Meraklı, hızlı öğrenen ve bir problemi sadece analiz etmekle yetinmeyip çalışan bir yazılıma dönüştürmeyi seven biriyim. Kariyer hedefim AI destekli operasyon/optimizasyon sistemleri kuran bir ML mühendisi/araştırmacı olmak. Ekte CV'mi de referans olarak paylaşıyorum, ama asıl istediğim aşağıdaki üç bölümü bu kendimi anlatan çerçeveden yola çıkarak yazman.
+
+Ardından CV ekinde detaylı okul, staj ve proje bilgilerini paylaştım ki AI hem benim kendi anlatımımı hem de somut kanıtları birleştirsin.
 
 **Kullanılan AI Aracı:** Claude
 **Kullanılan Komut (Prompt):**
@@ -26,7 +31,9 @@ Yapay zekanın beni tanıyıp içerikleri oluşturması ve ardından HTML/CSS ko
 > Web sitemdeki bu 3 bölümün yanına koymak üzere yapay zeka görsel araçlarında kullanabileceğim; modern, profesyonel, teknolojik ve yaratıcı temalı 3 adet İngilizce görsel üretim komutu (Image Prompt) hazırla. Komutlar doğrudan metinleri görselleştirmeye yönelik olsun.
 >
 > **ADIM 3: BUILD YOUR PERSONAL WEBSITE**
-> Yukarıdaki içerikleri ve görselleri birleştiren, tek bir HTML dosyası içinde çalışan, responsive (mobil uyumlu), son derece şık, temiz (clean UI) ve modern bir web sitesi kodu yaz. Tasarımda profesyonelliği vurgulayan modern bir renk paleti kullan. Görseller için `<img src="gorsel1.jpg">`, `gorsel2.jpg`, `gorsel3.jpg` yer tutucularını ekle. Tüm CSS kodlarını `<style>` etiketi içine göm ki tek dosyada anında çalıştırabileyim.
+> Yukarıdaki içerikleri ve görselleri birleştiren, tek bir HTML dosyası içinde çalışan, responsive (mobil uyumlu), son derece şık, temiz (clean UI) ve modern bir web sitesi kodu yaz. Hedef kitle işe alım uzmanları (recruiters) ve şirketlerdir; bu doğrultuda güven verici ve profesyonel bir ton kullan. Tasarımda profesyonelliği vurgulayan modern bir renk paleti kullan. Görseller için `<img src="gorsel1.jpg">`, `gorsel2.jpg`, `gorsel3.jpg` yer tutucularını ekle. Tüm CSS kodlarını `<style>` etiketi içine göm ki tek dosyada anında çalıştırabileyim.
+
+**Halüsinasyon kontrolü (Point 3):** AI'nın ürettiği üç bölümü CV'mle tek tek karşılaştırdım. Tüm rakamlar (GPA 3.66, Top 10/223, %50 süre azaltımı, +407.380 TL/ay vb.) ve proje isimleri CV'deki verilerle birebir örtüşüyordu; uydurma bir bilgi ya da abartılmış bir başarı tespit etmedim. Tek küçük düzeltme: "My Skills" bölümünde bir cümle CV'de olmayan bir sektör ismi kullanmaya çok yaklaşmıştı, onu daha nötr bir ifadeyle yeniden yazdırdım.
 
 **Teknik entegrasyon notu:** Üretilen görseller `images/` alt klasörüne kaydedilip HTML içindeki `<img>` etiketleri `images/gorsel1.jpg`, `images/gorsel2.jpg`, `images/gorsel3.jpg` yollarını gösterecek şekilde güncellenmiştir. Site tek bir HTML dosyası + bir görsel klasörü olarak birlikte çalışacak şekilde teslim edilmiştir.
 
@@ -34,6 +41,8 @@ Yapay zekanın beni tanıyıp içerikleri oluşturması ve ardından HTML/CSS ko
 
 ## Step 2: Image Generation
 Sitenin görsel dünyasını oluşturmak için AI tarafından üretilen promptlar kullanılmış ve görseller projeye entegre edilmiştir.
+
+**Discussion Point cevabım:** Görsellerin kalitesi tamamen prompt'ta stil, atmosfer ve amacı ne kadar net tarif ettiğime bağlıydı. Bu yüzden her prompt'ta üç şeyi sabit tuttum: (1) renk paleti - lacivert + amber + teal, sitenin genel tasarımıyla birebir eşleşsin diye; (2) ton - "professional", "editorial", "clean minimal tech aesthetic" gibi ifadelerle jenerik/karikatürize görsellerden kaçındım; (3) amaç - her görsel, ilgili bölümün mesajını (kimlik, yetenek/optimizasyon, gelecek vizyonu) doğrudan görselleştirsin, dekoratif kalmasın.
 
 * **gorsel1.jpg (Who I Am):** "An editorial double-exposure portrait blending a young engineer's profile with a glowing circuit-board and factory-floor blueprint overlay, deep navy and teal color palette, cinematic tech lighting, professional style, no text."
 
@@ -49,13 +58,14 @@ Bu revizyon sonucunda yüz net ve tanınabilir kalırken, teknik overlay yalnız
 
 ---
 
-## Step 4: Review and Improve 
+## Step 4: Review and Improve
 
-Süreç boyunca birkaç somut iyileştirme turu yapıldı:
+**Discussion Point cevabım:** Generative AI'ı yalnızca ilk taslak için değil, ürünü baştan sona iyileştirmek için de kullandım. Süreç boyunca birkaç somut iyileştirme turu yaptım:
 
 1. **Renk paleti ve tipografi:** Jenerik "AI tasarımı" kliselerinden (krem zemin + terracotta, ya da siyah zemin + neon yeşil) kaçınmak için koyu lacivert + amber + teal paleti ve `Space Grotesk` / `Inter` / `JetBrains Mono` yazı tipi kombinasyonu bilinçli olarak seçildi.
 2. **İmza tasarım öğesi:** Hero bölümüne, RouteIQ/MILP projelerime doğrudan gönderme yapan, canlı canvas animasyonuyla çizilen bir "optimizasyon rota ağı" eklendi - dekoratif değil, içerikle doğrudan bağlantılı bir seçim.
 3. **Görsel kalite kontrolü:** İlk üretilen portre görseli kişisel markayı yeterince yansıtmadığı için kendi fotoğrafımla yeniden üretildi; sonrasında üç görseldeki platform filigranları temizlendi.
 4. **Tam entegrasyon:** Başlangıçta yalnızca iki bölümde görsel kullanılıyordu; üçüncü görsel (yol/ufuk illüstrasyonu) "My Future Goal" bölümüne eklenerek üç bölümün de görsel açıdan tutarlı ve tam olması sağlandı.
 
-Sonuç olarak **Full-Stack AI Developer & Innovator** rolünü hedefleyen, **modern, dinamik ve son derece profesyonel** hissettiren bir site ortaya çıktı. AI'yı yalnızca ilk taslak için değil, **anlamsal düzen, renk kontrastı ve bölümlerin hikaye anlatımı tonunu** iyileştirmek için de iteratif olarak kullandım - bu da geleceğe dönük kariyer vizyonumu daha iyi yansıtmasını sağladı.
+**Share Your Result:**
+> "I aimed for a **Full-Stack AI Developer & ML/Operations Engineer** role, and I wanted my website to feel **modern, dynamic, and highly professional** - reflecting how I build AI-powered, software-driven solutions rather than doing conventional engineering analysis. I used AI to improve **the semantic layout structure, color contrast, the storytelling tone of each section, and even the personal photo used in the hero visual** so that it better reflects my future career."
