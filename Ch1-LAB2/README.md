@@ -4,6 +4,8 @@
 
 Bu proje, üretken yapay zeka araçları (Claude & Gemini) kullanılarak "Vibe Coding" metodolojisiyle uçtan uca tasarlanmış ve kodlanmış bir kişisel marka web sitesi çalışmasıdır.
 
+🔗 **Live Project Link:** [Ayşe Ulaşlı - Personal Branding Website](https://aaayseee.github.io/Inovation-Campus-AI/Ch1-LAB2/Personal-Web-Site.html)
+
 ---
 
 ## Step 1: Define Your Personal Profile
